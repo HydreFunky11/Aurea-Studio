@@ -1,0 +1,74 @@
+.wrapper {
+    padding: 100px 20px;
+    /* Le fond général de la section s'adapte au mode Jour/Nuit */
+    background-color: var(--bg-main);
+    text-align: center;
+}
+
+.sectionTitle {
+    font-family: var(--font-logo); /* Erotique Alternate */
+    font-size: 3.5rem;
+    color: var(--purple);
+
+    margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+    font-family: var(--font-title); /* Goudy */
+    color: var(--text-muted); /* S'adapte au thème */
+    margin-bottom: 4rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- LA CARTE --- */
+.card {
+    /* En mode jour = Blanc pur, En mode nuit = Gris très foncé/Noir */
+    background-color: var(--bg-card);
+
+    /* Bordure dorée demandée (#ffb801) */
+    border: 1px solid var(--gold);
+
+    /* Bords légèrement arrondis pour la touche moderne d'Aurea */
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Ombre dorée légère au survol */
+    box-shadow: 0 10px 30px rgba(255, 184, 1, 0.15);
+}
+
+.cardTitle {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    /* Le jour, ça sera Violet. La nuit, grâce à l'étape 1, ça sera automatiquement Corail ! */
+    color: var(--purple);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Le survol reste le même : il force le Doré dans tous les cas */
+.card:hover .cardTitle {
+    color: var(--gold); /* #ffb801 */
+}
+
+.cardDesc {
+    font-family: var(--font-main); /* Acumin */
+    /* Le texte s'adapte : Foncé le jour, Blanc la nuit */
+    color: var(--text-main);
+    line-height: 1.6;
+    font-size: 1.05rem;
+}

@@ -1,0 +1,87 @@
+.wrapper {
+    padding: 100px 20px;
+    background-color: var(--bg-main);
+    border-top: 3px solid var(--border-color);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-family: var(--font-logo);
+    font-size: 3rem;
+    background: var(--aurea-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.text {
+    font-family: var(--font-main);
+    /* S'adapte au thème */
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    /* Bordure qui s'adapte au thème */
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    /* CHANGEMENT : Couleur du texte saisie dynamique */
+    color: var(--text-main);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    /* CHANGEMENT : Placeholders lisibles le jour et la nuit */
+    color: var(--text-muted);
+    font-family: var(--font-title); /* Goudy pour l'élégance */
+    font-size: 1rem;
+}
+
+.input:focus,
+.textarea:focus {
+    /* Focus couleur Violet Aurea */
+    border-bottom-color: var(--purple);
+}
+
+.button {
+    margin-top: 1rem;
+    background: transparent;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    padding: 15px 40px;
+    border-radius: 30px; /* Bords arrondis pour la DA Aurea */
+    text-transform: uppercase;
+    font-family: var(--font-main);
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.button:hover {
+    background: var(--aurea-gradient);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(106, 13, 173, 0.2);
+}

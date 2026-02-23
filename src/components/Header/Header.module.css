@@ -1,0 +1,112 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--bg-header);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 0;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Le nouveau logo stylisé */
+.logo {
+    font-family: var(--font-logo); /* Erotique Alternate */
+    font-size: 2.2rem;
+    /* Utilisation du dégradé Aurea pour le texte */
+    background: var(--aurea-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.logoSub {
+    font-family: var(--font-main); /* Acumin */
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-main);
+    -webkit-text-fill-color: var(
+        --text-main
+    ); /* Annule le dégradé pour le sous-titre */
+    margin-top: 2px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.link {
+    font-family: var(
+        --font-title
+    ); /* Goudy Old Style pour le menu (très chic) */
+    font-size: 1.1rem;
+    color: var(--text-main);
+    position: relative;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.link:hover {
+    color: var(--coral); /* Accent corail au survol */
+}
+
+.link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--gold); /* Soulignement jaune/or */
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
+}
+
+.cta {
+    border: 1px solid var(--purple);
+    padding: 6px 20px;
+    border-radius: 30px; /* Un peu plus de rondeur pour la nouvelle DA */
+    color: var(--purple);
+}
+
+.cta:hover {
+    background: var(--aurea-gradient); /* Bouton dégradé au survol ! */
+    border-color: transparent;
+    color: #fff !important;
+}
+
+.cta::after {
+    display: none;
+}
+
+.toggleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding-left: 20px;
+    border-left: 1px solid var(--border-color);
+    height: 24px;
+}

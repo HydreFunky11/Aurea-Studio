@@ -1,0 +1,104 @@
+/* --- TYPOGRAPHIES AUREA STUDIO --- */
+/* Assurez-vous de placer ces polices dans le dossier public/fonts/ */
+@font-face {
+    font-family: "Erotique Alternate";
+    src: url("/fonts/ErotiqueAlternate.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Goudy Old Style";
+    src: url("/fonts/GoudyOldStyle.woff2") format("woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Acumin Variable Concept";
+    src: url("/fonts/AcuminVariableConcept.woff2") format("woff2");
+    font-weight: normal;
+}
+
+:root {
+    /* --- PALETTE DE COULEURS AUREA --- */
+    /* Couleurs Principales */
+    --purple: #6a0dad;
+    --coral: #ff6b6b;
+    --gold: #ffb801;
+
+    /* Couleurs Neutres */
+    --neutral-black: #0d0d0d;
+    --neutral-white: #f5f5f5;
+
+    /* Couleurs Supplémentaires */
+    --blue-dark: #1800ff;
+    --blue-light: #00d4ff;
+    --green-dark: #188945;
+    --green-light: #00c49a;
+
+    /* --- TYPOGRAPHIES SÉMANTIQUES --- */
+    --font-logo: "Erotique Alternate", serif;
+    --font-title: "Goudy Old Style", serif;
+    --font-main: "Acumin Variable Concept", sans-serif;
+
+    /* --- MODE JOUR (Par défaut) --- */
+    --bg-main: var(--neutral-white);
+    --bg-card: #ffffff; /* Un poil plus clair que le fond pour détacher les cartes */
+    --bg-header: rgba(245, 245, 245, 0.95);
+    --text-main: var(--neutral-black);
+    --text-muted: #4a4a4a;
+    --border-color: rgba(106, 13, 173, 0.3);
+
+    /* Dégradé emblématique Aurea (utilisé pour les accents) */
+    --aurea-gradient: linear-gradient(
+        135deg,
+        var(--purple),
+        var(--coral),
+        var(--gold)
+    );
+}
+
+[data-theme="dark"] {
+    /* --- MODE NUIT --- */
+    --bg-main: var(--neutral-black);
+    --bg-card: #141414;
+    --bg-header: rgba(13, 13, 13, 0.95);
+    --text-main: var(--neutral-white);
+    --text-muted: #b3b3b3;
+    --border-color: rgba(255, 184, 1, 0.2); /* Bordure dorée subtile */
+
+    /* ---> NOUVEAU : On écrase la variable purple par le corail en mode nuit <--- */
+    --purple: var(--coral);
+}
+
+/* --- CONFIGURATION GLOBALE --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+h1,
+h2,
+h3,
+p,
+div,
+header,
+section {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
