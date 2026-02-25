@@ -1,4 +1,4 @@
-import "./globals.css"; // Important pour charger votre CSS
+import "./globals.css";
 import { ThemeProvider } from "../context/ThemeContext";
 
 export const metadata = {

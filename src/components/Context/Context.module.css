@@ -1,6 +1,5 @@
 .wrapper {
     padding: 120px 20px;
-    /* CHANGEMENT : Le fond s'adapte automatiquement au thème */
     background-color: var(--bg-card);
     border-bottom: 1px solid var(--border-color);
 }
@@ -20,9 +19,8 @@
 }
 
 .title {
-    font-family: var(--font-logo); /* Erotique */
+    font-family: var(--font-logo);
     font-size: 3.5rem;
-    /* On utilise le violet Aurea pour le titre */
     color: var(--purple);
     margin: 0;
     line-height: 1;
@@ -31,15 +29,13 @@
 .goldLine {
     width: 60px;
     height: 3px;
-    /* On utilise le dégradé Aurea pour la ligne de séparation */
     background: var(--aurea-gradient);
     margin-top: 20px;
     margin-left: auto;
 }
 
 .textColumn {
-    font-family: var(--font-main); /* Acumin */
-    /* CHANGEMENT : Le texte s'adapte automatiquement (Noir le jour, Blanc la nuit) */
+    font-family: var(--font-main);
     color: var(--text-main);
     font-weight: 300;
 }
@@ -52,7 +48,6 @@
 
 .subIntro {
     font-size: 1.1rem;
-    /* Texte légèrement atténué mais lisible */
     color: var(--text-muted);
     margin-bottom: 2rem;
 }
@@ -75,15 +70,14 @@
     display: inline-block;
     min-width: 8px;
     height: 8px;
-    background-color: var(--gold); /* Losange jaune/or */
+    background-color: var(--gold);
     transform: rotate(45deg);
     margin-top: 8px;
     margin-right: 15px;
 }
 
 .resultBox {
-    border-left: 3px solid var(--coral); /* Accent corail */
-    /* Fond très subtil basé sur la bordure */
+    border-left: 3px solid var(--coral);
     background-color: var(--border-color);
     padding: 1.5rem;
     border-radius: 0 8px 8px 0;
@@ -91,7 +85,7 @@
 
 .resultText {
     margin: 0;
-    font-family: var(--font-title); /* Goudy */
+    font-family: var(--font-title);
     font-size: 1.2rem;
     letter-spacing: 0.5px;
 }

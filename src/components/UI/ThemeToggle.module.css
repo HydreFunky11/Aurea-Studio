@@ -4,7 +4,7 @@
     color: var(--gold);
     cursor: pointer;
     padding: 8px;
-    border-radius: 50%; /* Bouton rond */
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +13,6 @@
 
 .toggleBtn:hover {
     background-color: var(--gold);
-    color: var(--bg-main); /* La couleur du fond actuel */
+    color: var(--bg-main);
     transform: rotate(15deg);
 }

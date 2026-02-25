@@ -37,10 +37,8 @@
     width: 100%;
     background: transparent;
     border: none;
-    /* Bordure qui s'adapte au thème */
     border-bottom: 1px solid var(--border-color);
     padding: 15px 0;
-    /* CHANGEMENT : Couleur du texte saisie dynamique */
     color: var(--text-main);
     font-family: var(--font-main);
     font-size: 1rem;
@@ -50,15 +48,13 @@
 
 .input::placeholder,
 .textarea::placeholder {
-    /* CHANGEMENT : Placeholders lisibles le jour et la nuit */
     color: var(--text-muted);
-    font-family: var(--font-title); /* Goudy pour l'élégance */
+    font-family: var(--font-title);
     font-size: 1rem;
 }
 
 .input:focus,
 .textarea:focus {
-    /* Focus couleur Violet Aurea */
     border-bottom-color: var(--purple);
 }
 
@@ -68,7 +64,7 @@
     border: 1px solid var(--purple);
     color: var(--purple);
     padding: 15px 40px;
-    border-radius: 30px; /* Bords arrondis pour la DA Aurea */
+    border-radius: 30px;
     text-transform: uppercase;
     font-family: var(--font-main);
     font-weight: bold;

@@ -6,7 +6,6 @@
     justify-content: center;
     text-align: center;
     padding: 0 20px;
-    /* Un fond très subtil qui varie selon le thème */
     background: radial-gradient(
         circle at center,
         rgba(106, 13, 173, 0.05) 0%,
@@ -15,18 +14,17 @@
 }
 
 .title {
-    font-family: var(--font-logo); /* Erotique */
+    font-family: var(--font-logo);
     font-size: 5rem;
     margin-bottom: 10px;
     letter-spacing: 2px;
-    /* On applique le dégradé Aurea au grand titre */
     background: var(--aurea-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    font-family: var(--font-title); /* Goudy */
+    font-family: var(--font-title);
     font-size: 2.5rem;
     font-weight: normal;
     color: var(--text-main);
@@ -34,12 +32,12 @@
 }
 
 .goldText {
-    color: var(--gold); /* Jaune/Or Aurea */
+    color: var(--gold);
     font-style: italic;
 }
 
 .description {
-    font-family: var(--font-main); /* Acumin */
+    font-family: var(--font-main);
     max-width: 600px;
     margin: 0 auto 3rem auto;
     line-height: 1.6;
