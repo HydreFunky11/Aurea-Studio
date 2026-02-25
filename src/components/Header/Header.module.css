@@ -155,7 +155,7 @@
         position: fixed;
         top: 0;
         right: -100%; /* Caché hors de l'écran à droite par défaut */
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         background-color: var(--bg-main); /* S'adapte au mode jour/nuit */
         flex-direction: column;

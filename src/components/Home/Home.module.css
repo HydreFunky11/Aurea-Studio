@@ -5,12 +5,18 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 0;
     background: radial-gradient(
         circle at center,
         rgba(106, 13, 173, 0.05) 0%,
         var(--bg-main) 70%
     );
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title {
