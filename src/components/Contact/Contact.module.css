@@ -1,7 +1,7 @@
 .wrapper {
     padding: 100px 20px;
     background-color: var(--bg-main);
-    border-top: 3px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
 }
 
 .container {
@@ -12,7 +12,7 @@
 
 .title {
     font-family: var(--font-logo);
-    font-size: 3rem;
+    font-size: 4em;
     background: var(--aurea-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -21,7 +21,7 @@
 
 .text {
     font-family: var(--font-main);
-    /* S'adapte au thème */
+    font-size: 1em;
     color: var(--text-muted);
     margin-bottom: 3rem;
 }

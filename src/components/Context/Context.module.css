@@ -20,7 +20,7 @@
 
 .title {
     font-family: var(--font-logo);
-    font-size: 3.5rem;
+    font-size: 4em;
     color: var(--purple);
     margin: 0;
     line-height: 1;
@@ -41,13 +41,13 @@
 }
 
 .intro {
-    font-size: 1.2rem;
+    font-size: 1.5em;
     line-height: 1.5;
     margin-bottom: 1.5rem;
 }
 
 .subIntro {
-    font-size: 1.1rem;
+    font-size: 1.2em;
     color: var(--text-muted);
     margin-bottom: 2rem;
 }
