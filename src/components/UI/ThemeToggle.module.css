@@ -8,11 +8,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    position: relative;
 }
 
 .toggleBtn:hover {
     background-color: var(--gold);
     color: var(--bg-main);
-    transform: rotate(15deg);
+    border-color: var(--gold);
+    transform: rotate(20deg) scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 184, 1, 0.25);
+}
+
+.toggleBtn:active {
+    transform: rotate(20deg) scale(0.95);
 }

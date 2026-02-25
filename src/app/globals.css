@@ -16,83 +16,171 @@
 }
 
 :root {
-    /* Couleurs Principales */
     --purple: #6a0dad;
     --coral: #ff6b6b;
     --gold: #ffb801;
 
-    /* Couleurs Neutres */
     --neutral-black: #0d0d0d;
     --neutral-white: #f5f5f5;
 
-    /* Couleurs Supplémentaires */
     --blue-dark: #1800ff;
     --blue-light: #00d4ff;
     --green-dark: #188945;
     --green-light: #00c49a;
 
-    /* --- TYPOGRAPHIES SÉMANTIQUES --- */
     --font-logo: "Erotique Alternate", serif;
     --font-title: "Goudy Old Style", serif;
     --font-main: "Acumin Variable Concept", sans-serif;
 
-    /* --- MODE JOUR (Par défaut) --- */
-    --bg-main: var(--neutral-white);
-    --bg-card: #ffffff;
-    --bg-header: rgba(245, 245, 245, 0.95);
-    --text-main: var(--neutral-black);
-    --text-muted: #4a4a4a;
-    --border-color: rgba(106, 13, 173, 0.3);
-    --aurea-gradient: linear-gradient(
-        135deg,
-        var(--purple),
-        var(--coral),
-        var(--gold)
-    );
+    /* Mode Jour — palette chaude */
+    --bg-main: #fdf9f3;
+    --bg-card: #fffcf7;
+    --bg-card-alt: #faf5ec;
+    --bg-header: rgba(253, 249, 243, 0.75);
+    --text-main: #1a1208;
+    --text-muted: #6b5d4d;
+    --border-color: rgba(106, 13, 173, 0.1);
+    --border-subtle: rgba(255, 184, 1, 0.15);
+    --glow-color: rgba(255, 184, 1, 0.08);
+    --shadow-soft: 0 4px 30px rgba(26, 18, 8, 0.05);
+    --shadow-lift: 0 20px 60px rgba(26, 18, 8, 0.08);
+    --aurea-gradient: linear-gradient(135deg, var(--purple), var(--coral), var(--gold));
+    --grain-opacity: 0.025;
 }
 
 [data-theme="dark"] {
-    /* --- MODE NUIT --- */
-    --bg-main: var(--neutral-black);
-    --bg-card: #141414;
-    --bg-header: rgba(13, 13, 13, 0.95);
-    --text-main: var(--neutral-white);
-    --text-muted: #b3b3b3;
-    --border-color: rgba(255, 184, 1, 0.2);
+    --bg-main: #0a0806;
+    --bg-card: #13100b;
+    --bg-card-alt: #0e0b07;
+    --bg-header: rgba(10, 8, 6, 0.75);
+    --text-main: #f5efe6;
+    --text-muted: #a89880;
+    --border-color: rgba(255, 184, 1, 0.1);
+    --border-subtle: rgba(255, 184, 1, 0.08);
+    --glow-color: rgba(255, 184, 1, 0.05);
+    --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.3);
+    --shadow-lift: 0 20px 60px rgba(0, 0, 0, 0.4);
     --purple: var(--coral);
+    --grain-opacity: 0.04;
 }
 
-/* --- CONFIGURATION GLOBALE --- */
+/* --- GLOBAL --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: var(--bg-main);
     color: var(--text-main);
     font-family: var(--font-main);
     overflow-x: hidden;
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
 
-h1,
-h2,
-h3,
-p,
-div,
-header,
-section {
-    transition:
-        background-color 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
+h1, h2, h3, p, div, header, section, nav, ul, li {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(80px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleReveal {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes expandWidth {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(2deg); }
+    66% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(-25px) rotate(50deg); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes revealLine {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+@keyframes bounceSubtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes driftOrb1 {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(80px, 40px) scale(1.05); }
+    50% { transform: translate(30px, 100px) scale(0.95); }
+    75% { transform: translate(-50px, 50px) scale(1.08); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes driftOrb2 {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-60px, -50px) scale(1.06); }
+    50% { transform: translate(-100px, 20px) scale(0.94); }
+    75% { transform: translate(40px, -30px) scale(1.04); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes driftOrb3 {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(50px, -70px) scale(0.96); }
+    50% { transform: translate(-40px, -40px) scale(1.07); }
+    75% { transform: translate(-80px, 30px) scale(1.02); }
+    100% { transform: translate(0, 0) scale(1); }
 }
