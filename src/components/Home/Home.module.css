@@ -12,27 +12,57 @@
 
 /* --- ORB DRIFT KEYFRAMES --- */
 @keyframes driftOrb1 {
-    0% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(80px, 40px) scale(1.05); }
-    50% { transform: translate(30px, 100px) scale(0.95); }
-    75% { transform: translate(-50px, 50px) scale(1.08); }
-    100% { transform: translate(0, 0) scale(1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(80px, 40px) scale(1.05);
+    }
+    50% {
+        transform: translate(30px, 100px) scale(0.95);
+    }
+    75% {
+        transform: translate(-50px, 50px) scale(1.08);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 @keyframes driftOrb2 {
-    0% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(-60px, -50px) scale(1.06); }
-    50% { transform: translate(-100px, 20px) scale(0.94); }
-    75% { transform: translate(40px, -30px) scale(1.04); }
-    100% { transform: translate(0, 0) scale(1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(-60px, -50px) scale(1.06);
+    }
+    50% {
+        transform: translate(-100px, 20px) scale(0.94);
+    }
+    75% {
+        transform: translate(40px, -30px) scale(1.04);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 @keyframes driftOrb3 {
-    0% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(50px, -70px) scale(0.96); }
-    50% { transform: translate(-40px, -40px) scale(1.07); }
-    75% { transform: translate(-80px, 30px) scale(1.02); }
-    100% { transform: translate(0, 0) scale(1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(50px, -70px) scale(0.96);
+    }
+    50% {
+        transform: translate(-40px, -40px) scale(1.07);
+    }
+    75% {
+        transform: translate(-80px, 30px) scale(1.02);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 /* --- ANIMATED GRADIENT ORBS --- */
@@ -178,9 +208,15 @@
     font-weight: 700;
 }
 
-.bgValue:nth-child(1) { transform: translateX(-15%) rotate(-5deg); }
-.bgValue:nth-child(2) { transform: translateX(20%) rotate(3deg); }
-.bgValue:nth-child(3) { transform: translateX(-5%) rotate(-2deg); }
+.bgValue:nth-child(1) {
+    transform: translateX(-15%) rotate(-5deg);
+}
+.bgValue:nth-child(2) {
+    transform: translateX(20%) rotate(3deg);
+}
+.bgValue:nth-child(3) {
+    transform: translateX(-5%) rotate(-2deg);
+}
 
 /* --- CONTENT --- */
 .containerMain {
@@ -230,7 +266,12 @@
     width: 100%;
     height: 100%;
     border-radius: 16px;
-    background: linear-gradient(135deg, rgba(106, 13, 173, 0.1), rgba(255, 107, 107, 0.1), rgba(255, 184, 1, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(106, 13, 173, 0.1),
+        rgba(255, 107, 107, 0.1),
+        rgba(255, 184, 1, 0.1)
+    );
     position: relative;
     overflow: hidden;
 }
@@ -239,7 +280,11 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent);
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
 }
 
 .visualFloatingBadge {
@@ -350,6 +395,7 @@
     font-weight: 300;
     margin-top: 8px;
     opacity: 0.8;
+    margin-right: 15px;
 }
 
 /* Subtitle */
@@ -525,7 +571,8 @@
         padding-top: 80px;
     }
 
-    .diamond, .circle {
+    .diamond,
+    .circle {
         display: none;
     }
 
