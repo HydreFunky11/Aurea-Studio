@@ -48,6 +48,10 @@ export default function Home() {
           </div>
         </div>
 
+        <h1 className={styles.title}>
+          <span className={styles.titleAurea}>Aurea</span>
+          <span className={styles.titleEvent}>Event</span>
+        </h1>
         <div className={styles.content}>
           <div className={styles.tagline}>
             <span className={styles.taglineLine}></span>
