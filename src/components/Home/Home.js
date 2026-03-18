@@ -21,43 +21,59 @@ export default function Home() {
       {/* Grain overlay */}
       <div className={styles.grain} aria-hidden="true"></div>
 
-      <div className={styles.content}>
-        <div className={styles.tagline}>
-          <span className={styles.taglineLine}></span>
-          <span className={styles.taglineText}>Agence Événementielle</span>
-          <span className={styles.taglineLine}></span>
+      <div className={styles.containerMain}>
+        <div className={styles.visualSide}>
+          <div className={styles.visualContent}>
+            {/* Image placeholder with elegant styling */}
+            <div className={styles.visualFrame}>
+              <div className={styles.visualImagePlaceholder}></div>
+            </div>
+            {/* Smaller floating element for "video" feel */}
+            <div className={styles.visualFloatingBadge}>
+              <span className={styles.badgeLabel}>Live Event</span>
+              <div className={styles.badgePulse}></div>
+            </div>
+          </div>
         </div>
 
-        <h1 className={styles.title}>Aurea Event</h1>
+        <div className={styles.content}>
+          <div className={styles.tagline}>
+            <span className={styles.taglineLine}></span>
+            <span className={styles.taglineText}>Agence Événementielle</span>
+            <span className={styles.taglineLine}></span>
+          </div>
 
-        <h2 className={styles.subtitle}>
-          Révélateur de <span className={styles.goldText}>Talents</span>
-          <br />
-          <span className={styles.ampersand}>&</span> Créateur d&apos;Instants
-        </h2>
+          <h1 className={styles.title}>Aurea Event</h1>
 
-        <p className={styles.description}>
-          Une plateforme unique centralisant décoration, musique, gastronomie et
-          arts visuels.
-        </p>
+          <h2 className={styles.subtitle}>
+            Révélateur de <span className={styles.goldText}>Talents</span>
+            <br />
+            <span className={styles.ampersand}>&</span> Créateur d&apos;Instants
+          </h2>
 
-        <div className={styles.values}>
-          <span className={styles.value}>Créativité</span>
-          <span className={styles.valueDot}></span>
-          <span className={styles.value}>Authenticité</span>
-          <span className={styles.valueDot}></span>
-          <span className={styles.value}>Impact</span>
+          <p className={styles.description}>
+            Une plateforme unique centralisant décoration, musique, gastronomie et
+            arts visuels.
+          </p>
+
+          <div className={styles.values}>
+            <span className={styles.value}>Créativité</span>
+            <span className={styles.valueDot}></span>
+            <span className={styles.value}>Authenticité</span>
+            <span className={styles.valueDot}></span>
+            <span className={styles.value}>Impact</span>
+          </div>
+
+          <a href="#services" className={styles.ctaButton}>
+            <span className={styles.ctaText}>Découvrir nos services</span>
+            <span className={styles.ctaArrow}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </span>
+          </a>
         </div>
-
-        <a href="#services" className={styles.ctaButton}>
-          <span className={styles.ctaText}>Découvrir nos services</span>
-          <span className={styles.ctaArrow}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </span>
-        </a>
       </div>
 
       {/* Scroll indicator */}
