@@ -28,11 +28,6 @@ export default function Home() {
         <span className={styles.bgValue}>Impact</span>
       </div>
 
-      <div className={styles.content}>
-        <div className={styles.tagline}>
-          <span className={styles.taglineLine}></span>
-          <span className={styles.taglineText}>Agence Événementielle</span>
-          <span className={styles.taglineLine}></span>
       <div className={styles.containerMain}>
         <div className={styles.visualSide}>
           <div className={styles.visualContent}>
@@ -40,18 +35,9 @@ export default function Home() {
             <div className={styles.visualFrame}>
               <div className={styles.visualImagePlaceholder}></div>
             </div>
-            {/* Smaller floating element for "video" feel */}
-            <div className={styles.visualFloatingBadge}>
-              <span className={styles.badgeLabel}>Live Event</span>
-              <div className={styles.badgePulse}></div>
-            </div>
           </div>
         </div>
 
-        <h1 className={styles.title}>
-          <span className={styles.titleAurea}>Aurea</span>
-          <span className={styles.titleEvent}>Event</span>
-        </h1>
         <div className={styles.content}>
           <div className={styles.tagline}>
             <span className={styles.taglineLine}></span>
@@ -59,7 +45,10 @@ export default function Home() {
             <span className={styles.taglineLine}></span>
           </div>
 
-          <h1 className={styles.title}>Aurea Event</h1>
+          <h1 className={styles.title}>
+            <span className={styles.titleAurea}>Aurea</span>
+            <span className={styles.titleEvent}>Event</span>
+          </h1>
 
           <h2 className={styles.subtitle}>
             Révélateur de <span className={styles.goldText}>Talents</span>
