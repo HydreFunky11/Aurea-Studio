@@ -197,18 +197,34 @@
 /* Title */
 .title {
     font-family: var(--font-logo);
-    font-size: clamp(3.5rem, 10vw, 8.5rem);
-    line-height: 0.95;
-    margin-bottom: clamp(16px, 2vh, 24px);
-    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.85;
+    margin-bottom: clamp(24px, 3vh, 32px);
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.titleAurea {
+    font-size: clamp(3rem, 8vw, 6.5rem);
     background: var(--aurea-gradient);
     background-size: 200% 200%;
-    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both,
-               gradientShift 8s ease infinite;
+    animation: gradientShift 8s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -1px;
+}
+
+.titleEvent {
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    color: var(--text-muted);
+    font-family: var(--font-main);
+    font-weight: 300;
+    margin-top: 8px;
+    opacity: 0.8;
 }
 
 /* Subtitle */
