@@ -21,6 +21,13 @@ export default function Home() {
       {/* Grain overlay */}
       <div className={styles.grain} aria-hidden="true"></div>
 
+      {/* Background large values */}
+      <div className={styles.backgroundValues} aria-hidden="true">
+        <span className={styles.bgValue}>Créativité</span>
+        <span className={styles.bgValue}>Authenticité</span>
+        <span className={styles.bgValue}>Impact</span>
+      </div>
+
       <div className={styles.content}>
         <div className={styles.tagline}>
           <span className={styles.taglineLine}></span>
