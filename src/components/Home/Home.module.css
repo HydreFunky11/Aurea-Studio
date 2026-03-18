@@ -183,14 +183,112 @@
 .bgValue:nth-child(3) { transform: translateX(-5%) rotate(-2deg); }
 
 /* --- CONTENT --- */
-.content {
+.containerMain {
     position: relative;
     z-index: 2;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: clamp(40px, 8vw, 120px);
+    width: 100%;
+    max-width: 1400px;
     padding: 0 clamp(20px, 5vw, 80px);
-    max-width: 1100px;
+    margin-top: 40px;
+}
+
+.visualSide {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    perspective: 1000px;
+}
+
+.visualContent {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.visualFrame {
+    aspect-ratio: 4 / 5;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 12px;
+    box-shadow: var(--shadow-lift);
+    transform: rotate(-2deg);
+    transition: transform 0.6s ease;
+}
+
+.visualFrame:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.visualImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(106, 13, 173, 0.1), rgba(255, 107, 107, 0.1), rgba(255, 184, 1, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.visualImagePlaceholder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.visualFloatingBadge {
+    position: absolute;
+    bottom: 40px;
+    right: -20px;
+    background: var(--bg-header);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-subtle);
+    padding: 12px 24px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-soft);
+    animation: float 5s ease-in-out infinite;
+}
+
+.badgeLabel {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-main);
+}
+
+.badgePulse {
+    width: 8px;
+    height: 8px;
+    background: var(--coral);
+    border-radius: 50%;
+    position: relative;
+}
+
+.badgePulse::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid var(--coral);
+    animation: pulseGlow 2s ease-out infinite;
+}
+
+.content {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 /* Tagline */
@@ -382,6 +480,29 @@
 }
 
 /* --- MOBILE --- */
+@media (max-width: 1024px) {
+    .containerMain {
+        flex-direction: column;
+        gap: 60px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .visualSide {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .visualContent {
+        max-width: 320px;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         min-height: 100dvh;

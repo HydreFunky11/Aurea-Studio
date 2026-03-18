@@ -90,7 +90,8 @@
 }
 
 .input,
-.textarea {
+.textarea,
+.select {
     width: 100%;
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -102,6 +103,26 @@
     outline: none;
     transition: all 0.4s ease;
     font-weight: 300;
+}
+
+.select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffb801' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    padding-right: 40px;
+}
+
+.dateLabel {
+    font-family: var(--font-main);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    margin-left: 4px;
+    font-weight: 400;
 }
 
 .textarea {
@@ -119,7 +140,8 @@
 }
 
 .input:focus,
-.textarea:focus {
+.textarea:focus,
+.select:focus {
     border-color: var(--gold);
     box-shadow: 0 0 0 3px rgba(255, 184, 1, 0.08);
 }
