@@ -28,7 +28,7 @@ export default function Home() {
           <span className={styles.taglineLine}></span>
         </div>
 
-        <h1 className={styles.title}>Aurea Studio</h1>
+        <h1 className={styles.title}>Aurea Event</h1>
 
         <h2 className={styles.subtitle}>
           Révélateur de <span className={styles.goldText}>Talents</span>

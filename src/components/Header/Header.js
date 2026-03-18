@@ -19,7 +19,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          Aurea <span className={styles.logoSub}>STUDIO</span>
+          Aurea <span className={styles.logoSub}>EVENT</span>
         </div>
 
         <button
