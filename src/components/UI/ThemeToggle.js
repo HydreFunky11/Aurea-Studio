@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "vega-react-components";
 import { useTheme } from "../../context/ThemeContext";
 import styles from "./ThemeToggle.module.css";
 
@@ -6,7 +7,7 @@ export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <button
+    <Button
       onClick={toggleTheme}
       className={styles.toggleBtn}
       aria-label="Changer le thème"
@@ -48,6 +49,7 @@ export default function ThemeToggle() {
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
       )}
-    </button>
+    </Button>
   );
 }
+

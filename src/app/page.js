@@ -3,6 +3,7 @@ import Services from "../components/Services/Service";
 import Contact from "../components/Contact/Contact";
 import Header from "../components/Header/Header";
 import Context from "../components/Context/Context";
+import Footer from "../components/Footer/Footer";
 
 export default function Main() {
   return (
@@ -22,6 +23,10 @@ export default function Main() {
 
       <section id="contact">
         <Contact />
+      </section>
+
+      <section id="footer">
+        <Footer />
       </section>
     </main>
   );

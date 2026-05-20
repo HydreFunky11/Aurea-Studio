@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "vega-react-components";
 import styles from "./Header.module.css";
 import ThemeToggle from "../UI/ThemeToggle";
 
@@ -22,7 +23,7 @@ export default function Header() {
           Aurea <span className={styles.logoSub}>EVENT</span>
         </div>
 
-        <button
+        <Button
           className={`${styles.burger} ${isMenuOpen ? styles.burgerOpen : ""}`}
           onClick={toggleMenu}
           aria-label="Menu"
@@ -30,7 +31,7 @@ export default function Header() {
           <span></span>
           <span></span>
           <span></span>
-        </button>
+        </Button>
 
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
           <a href="#home" className={styles.link} onClick={closeMenu}>

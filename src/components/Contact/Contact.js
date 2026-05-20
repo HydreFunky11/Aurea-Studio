@@ -1,6 +1,11 @@
+"use client";
+import { useState } from "react";
+import { Button, InputText, PhoneNumberInput } from "vega-react-components";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
+  const [phone, setPhone] = useState("");
+
   return (
     <div className={styles.wrapper}>
       {/* Decorative gradient line at top */}
@@ -23,19 +28,21 @@ export default function Contact() {
           {/* Ligne 1 : Nom et Email */}
           <div className={styles.row}>
             <div className={styles.group}>
-              <input
+              <InputText
                 type="text"
                 placeholder="Nom complet"
                 className={styles.input}
                 required
+                fullWidth
               />
             </div>
             <div className={styles.group}>
-              <input
+              <InputText
                 type="email"
                 placeholder="Email"
                 className={styles.input}
                 required
+                fullWidth
               />
             </div>
           </div>
@@ -43,15 +50,18 @@ export default function Contact() {
           {/* Ligne 2 : Téléphone et Type d'événement */}
           <div className={styles.row}>
             <div className={styles.group}>
-              <input
-                type="tel"
+              <PhoneNumberInput
                 placeholder="Téléphone"
                 className={styles.input}
+                value={phone}
+                onChange={setPhone}
+                defaultCountry="FR"
+                fullWidth
               />
             </div>
             <div className={styles.group}>
-              <select className={styles.select} required>
-                <option value="" disabled selected>Type d&apos;événement</option>
+              <select className={styles.select} required defaultValue="">
+                <option value="" disabled>Type d&apos;événement</option>
                 <option value="mariage">Mariage</option>
                 <option value="corporate">Entreprise / Séminaire</option>
                 <option value="anniversaire">Anniversaire / Privé</option>
@@ -63,12 +73,14 @@ export default function Contact() {
           {/* Ligne 3 : Date de l'événement */}
           <div className={styles.group}>
             <div className={styles.dateLabel}>Date souhaitée de l&apos;événement</div>
-            <input
+            <InputText
               type="date"
               className={styles.input}
               required
+              fullWidth
             />
           </div>
+
 
           {/* Message */}
           <div className={styles.group}>
@@ -80,13 +92,22 @@ export default function Contact() {
             ></textarea>
           </div>
 
-          <button type="submit" className={styles.button}>
+          <Button type="submit" className={styles.button}>
             <span>Envoyer la demande</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <line x1="22" y1="2" x2="11" y2="13"></line>
               <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
             </svg>
-          </button>
+          </Button>
         </form>
       </div>
     </div>

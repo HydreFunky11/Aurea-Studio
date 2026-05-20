@@ -1,0 +1,190 @@
+.footer {
+    position: relative;
+    background-color: var(--bg-main);
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--border-subtle);
+    overflow: hidden;
+    color: var(--text-main);
+}
+
+.grain {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 60px);
+    position: relative;
+    z-index: 2;
+}
+
+/* --- TOP SECTION --- */
+.topSection {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+}
+
+.brandCol {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.logo {
+    font-family: var(--font-logo);
+    font-size: 2.2rem;
+    background: var(--aurea-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.logoSub {
+    font-family: var(--font-main);
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    -webkit-text-fill-color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 300;
+}
+
+.brandDesc {
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 320px;
+}
+
+.colTitle {
+    font-family: var(--font-title);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.footerNav, .footerList, .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footerLink, .listItem, .socialLink {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.footerLink:hover, .socialLink:hover {
+    color: var(--text-main);
+    transform: translateX(5px);
+}
+
+.listItem {
+    cursor: default;
+}
+
+/* --- BOTTOM SECTION --- */
+.bottomSection {
+    padding-top: 40px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.copyright {
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+.poweredBy {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.vegaLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-main);
+    padding: 6px 14px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    transition: all 0.4s ease;
+}
+
+.vegaLink:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.vegaText {
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.vegaLogo {
+    color: var(--gold);
+    transition: transform 0.4s ease;
+}
+
+.vegaLink:hover .vegaLogo {
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .topSection {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .topSection {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bottomSection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .brandDesc {
+        max-width: 100%;
+    }
+}

@@ -1,6 +1,26 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
 import styles from "./Home.module.css";
 
+const images = ["/aurea1.webp", "/aurea2.webp", "/aurea3.webp"];
+
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextImage = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, []);
+
+  const prevImage = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(nextImage, 5000);
+    return () => clearInterval(interval);
+  }, [nextImage, currentIndex]); // Adding currentIndex here will reset the interval on manual change
+
   return (
     <div className={styles.hero}>
       {/* Animated warm gradient orbs */}
@@ -33,7 +53,52 @@ export default function Home() {
           <div className={styles.visualContent}>
             {/* Image placeholder with elegant styling */}
             <div className={styles.visualFrame}>
-              <div className={styles.visualImagePlaceholder}></div>
+              <div className={styles.visualImagePlaceholder}>
+                <div 
+                  className={styles.imageSlider} 
+                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                  {images.map((src, index) => (
+                    <img 
+                      key={index} 
+                      src={src} 
+                      alt={`Aurea ${index + 1}`} 
+                      className={styles.carouselImage}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Navigation Arrows */}
+              <button 
+                className={`${styles.navArrow} ${styles.prevArrow}`} 
+                onClick={prevImage}
+                aria-label="Image précédente"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button 
+                className={`${styles.navArrow} ${styles.nextArrow}`} 
+                onClick={nextImage}
+                aria-label="Image suivante"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+
+              {/* Indicators */}
+              <div className={styles.carouselIndicators}>
+                {images.map((_, index) => (
+                  <span 
+                    key={index} 
+                    className={`${styles.indicator} ${currentIndex === index ? styles.activeIndicator : ""}`}
+                    onClick={() => setCurrentIndex(index)}
+                  ></span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -57,8 +122,8 @@ export default function Home() {
           </h2>
 
           <p className={styles.description}>
-            Une plateforme unique centralisant décoration, musique, gastronomie et
-            arts visuels.
+            Une plateforme unique centralisant décoration, musique, gastronomie
+            et arts visuels.
           </p>
 
           <div className={styles.values}>
@@ -72,7 +137,16 @@ export default function Home() {
           <a href="#services" className={styles.ctaButton}>
             <span className={styles.ctaText}>Découvrir nos services</span>
             <span className={styles.ctaArrow}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
