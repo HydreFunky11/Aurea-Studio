@@ -1,10 +1,24 @@
 "use client";
+import { useState, useEffect } from "react";
 import { Button } from "vega-react-components";
 import { useTheme } from "../../context/ThemeContext";
 import styles from "./ThemeToggle.module.css";
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return (
+      <Button className={styles.toggleBtn} aria-label="Changer le thème">
+        <div style={{ width: 20, height: 20 }} />
+      </Button>
+    );
+  }
 
   return (
     <Button

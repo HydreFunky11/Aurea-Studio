@@ -19,8 +19,9 @@ const Footer = () => {
               Aurea <span className={styles.logoSub}>EVENT</span>
             </div>
             <p className={styles.brandDesc}>
-              Révélateur de talents et créateur d&apos;instants d&apos;exception. Une
-              plateforme unique centralisant l&apos;excellence événementielle.
+              Révélateur de talents et créateur d&apos;instants
+              d&apos;exception. Une plateforme unique centralisant
+              l&apos;excellence événementielle.
             </p>
           </div>
 
@@ -82,7 +83,7 @@ const Footer = () => {
 
         <div className={styles.bottomSection}>
           <div className={styles.copyright}>
-            &copy; {currentYear} Aurea Event. Tous droits réservés.
+            &copy; {currentYear} Gold Event. Tous droits réservés.
           </div>
 
           <div className={styles.poweredBy}>

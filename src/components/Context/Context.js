@@ -4,7 +4,9 @@ export default function Context() {
   return (
     <section className={styles.wrapper}>
       {/* Background watermark */}
-      <div className={styles.watermark} aria-hidden="true">Aurea</div>
+      <div className={styles.watermark} aria-hidden="true">
+        Gold
+      </div>
 
       <div className={styles.container}>
         {/* Left - Brand intro */}
@@ -15,11 +17,11 @@ export default function Context() {
           </div>
           <h2 className={styles.title}>Contexte</h2>
           <div className={styles.goldLine}></div>
-          <p className={styles.etymology}>
+          {/* <p className={styles.etymology}>
             &laquo;&nbsp;Auréa&nbsp;&raquo; vient du latin <em>aureus/aurea</em>,
             signifiant &laquo;&nbsp;doré&nbsp;&raquo;, &laquo;&nbsp;en or&nbsp;&raquo;
             ou &laquo;&nbsp;précieux et lumineux&nbsp;&raquo;.
-          </p>
+          </p>*/}
         </div>
 
         {/* Right - Concept, Mission, Contexte */}
@@ -31,11 +33,11 @@ export default function Context() {
               <h3 className={styles.blockTitle}>Concept</h3>
             </div>
             <p className={styles.blockText}>
-              Notre concept d&apos;agence événementielle simplifie tout : une seule
-              plateforme qui centralise ces services pour les particuliers et
-              professionnels tout en révélant de jeunes talents où la décoration
-              est le fil conducteur accompagné de chaque prestation : musique,
-              gastronomie, photo, arts visuels.
+              Notre concept d&apos;agence événementielle simplifie tout : une
+              seule plateforme qui centralise ces services pour les particuliers
+              et professionnels tout en révélant de jeunes talents où la
+              décoration est le fil conducteur accompagné de chaque prestation :
+              musique, gastronomie, photo, arts visuels.
             </p>
           </div>
 
@@ -61,29 +63,36 @@ export default function Context() {
             </div>
             <p className={styles.blockText}>
               Aujourd&apos;hui, organiser un événement demande du temps et de
-              l&apos;énergie. La coordination de multiples prestataires exige de :
+              l&apos;énergie. La coordination de multiples prestataires exige de
+              :
             </p>
             <ul className={styles.list}>
               <li className={styles.listItem}>
                 <span className={styles.bullet}></span>
-                <span>Rechercher les bons contacts, souvent sans réseau ni
-                recommandations fiables.</span>
+                <span>
+                  Rechercher les bons contacts, souvent sans réseau ni
+                  recommandations fiables.
+                </span>
               </li>
               <li className={styles.listItem}>
                 <span className={styles.bullet}></span>
-                <span>Comparer les prix et la qualité, ce qui peut prendre
-                énormément de temps.</span>
+                <span>
+                  Comparer les prix et la qualité, ce qui peut prendre
+                  énormément de temps.
+                </span>
               </li>
               <li className={styles.listItem}>
                 <span className={styles.bullet}></span>
-                <span>Gérer la logistique : disponibilité, contrats, paiements,
-                imprévus.</span>
+                <span>
+                  Gérer la logistique : disponibilité, contrats, paiements,
+                  imprévus.
+                </span>
               </li>
             </ul>
             <div className={styles.resultBox}>
               <p className={styles.resultText}>
-                <strong className={styles.resultHighlight}>Résultat :</strong> beaucoup
-                abandonnent ou dépensent bien plus que prévu.
+                <strong className={styles.resultHighlight}>Résultat :</strong>{" "}
+                beaucoup abandonnent ou dépensent bien plus que prévu.
               </p>
             </div>
           </div>

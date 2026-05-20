@@ -54,15 +54,15 @@ export default function Home() {
             {/* Image placeholder with elegant styling */}
             <div className={styles.visualFrame}>
               <div className={styles.visualImagePlaceholder}>
-                <div 
-                  className={styles.imageSlider} 
+                <div
+                  className={styles.imageSlider}
                   style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                   {images.map((src, index) => (
-                    <img 
-                      key={index} 
-                      src={src} 
-                      alt={`Aurea ${index + 1}`} 
+                    <img
+                      key={index}
+                      src={src}
+                      alt={`Gold ${index + 1}`}
                       className={styles.carouselImage}
                     />
                   ))}
@@ -70,21 +70,39 @@ export default function Home() {
               </div>
 
               {/* Navigation Arrows */}
-              <button 
-                className={`${styles.navArrow} ${styles.prevArrow}`} 
+              <button
+                className={`${styles.navArrow} ${styles.prevArrow}`}
                 onClick={prevImage}
                 aria-label="Image précédente"
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <polyline points="15 18 9 12 15 6"></polyline>
                 </svg>
               </button>
-              <button 
-                className={`${styles.navArrow} ${styles.nextArrow}`} 
+              <button
+                className={`${styles.navArrow} ${styles.nextArrow}`}
                 onClick={nextImage}
                 aria-label="Image suivante"
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
               </button>
@@ -92,8 +110,8 @@ export default function Home() {
               {/* Indicators */}
               <div className={styles.carouselIndicators}>
                 {images.map((_, index) => (
-                  <span 
-                    key={index} 
+                  <span
+                    key={index}
                     className={`${styles.indicator} ${currentIndex === index ? styles.activeIndicator : ""}`}
                     onClick={() => setCurrentIndex(index)}
                   ></span>
