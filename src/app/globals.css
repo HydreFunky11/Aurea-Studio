@@ -84,6 +84,16 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* Simulate 150% browser zoom on large screens */
+@media (min-width: 1025px) {
+    body {
+        zoom: 1.5;
+        /* Note: zoom isn't supported in Firefox, 
+           but transform scale on body would require complex adjustments. 
+           Most developers use zoom for this specific 'visual scale' request. */
+    }
+}
+
 h1, h2, h3, p, div, header, section, nav, ul, li {
     transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
