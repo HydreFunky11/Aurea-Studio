@@ -16,7 +16,7 @@
 }
 
 :root {
-    --purple: #6a0dad;
+    --purple: #ff6b6b; /* Same as coral in dark mode */
     --coral: #ff6b6b;
     --gold: #ffb801;
 
@@ -32,23 +32,7 @@
     --font-title: "Goudy Old Style", serif;
     --font-main: "Acumin Variable Concept", sans-serif;
 
-    /* Mode Jour — palette chaude */
-    --bg-main: #fdf9f3;
-    --bg-card: #fffcf7;
-    --bg-card-alt: #faf5ec;
-    --bg-header: rgba(253, 249, 243, 0.75);
-    --text-main: #1a1208;
-    --text-muted: #6b5d4d;
-    --border-color: rgba(106, 13, 173, 0.1);
-    --border-subtle: rgba(255, 184, 1, 0.15);
-    --glow-color: rgba(255, 184, 1, 0.08);
-    --shadow-soft: 0 4px 30px rgba(26, 18, 8, 0.05);
-    --shadow-lift: 0 20px 60px rgba(26, 18, 8, 0.08);
-    --aurea-gradient: linear-gradient(135deg, var(--purple), var(--coral), var(--gold));
-    --grain-opacity: 0.025;
-}
-
-[data-theme="dark"] {
+    /* Mode Sombre par défaut */
     --bg-main: #0a0806;
     --bg-card: #13100b;
     --bg-card-alt: #0e0b07;
@@ -60,8 +44,24 @@
     --glow-color: rgba(255, 184, 1, 0.05);
     --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.3);
     --shadow-lift: 0 20px 60px rgba(0, 0, 0, 0.4);
-    --purple: var(--coral);
+    --aurea-gradient: linear-gradient(135deg, #6a0dad, var(--coral), var(--gold));
     --grain-opacity: 0.04;
+}
+
+[data-theme="light"] {
+    --bg-main: #fdf9f3;
+    --bg-card: #fffcf7;
+    --bg-card-alt: #faf5ec;
+    --bg-header: rgba(253, 249, 243, 0.75);
+    --text-main: #1a1208;
+    --text-muted: #6b5d4d;
+    --border-color: rgba(106, 13, 173, 0.1);
+    --border-subtle: rgba(255, 184, 1, 0.15);
+    --glow-color: rgba(255, 184, 1, 0.08);
+    --shadow-soft: 0 4px 30px rgba(26, 18, 8, 0.05);
+    --shadow-lift: 0 20px 60px rgba(26, 18, 8, 0.08);
+    --purple: #6a0dad;
+    --grain-opacity: 0.025;
 }
 
 /* --- GLOBAL --- */
