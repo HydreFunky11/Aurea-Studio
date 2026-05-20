@@ -1,0 +1,139 @@
+.card {
+    --card-accent: var(--gold);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100%;
+    padding: clamp(24px, 3vw, 36px);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1),
+        box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--card-accent), var(--gold));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+    border-color: transparent;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.featured {
+    border-color: color-mix(in srgb, var(--card-accent) 40%, transparent);
+    box-shadow: var(--shadow-soft);
+}
+
+.featured:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+
+.accent_gold {
+    --card-accent: var(--gold);
+}
+
+.accent_coral {
+    --card-accent: var(--coral);
+}
+
+.header {
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-family: var(--font-title);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    transition: color 0.4s ease;
+}
+
+.card:hover .title {
+    color: var(--card-accent);
+}
+
+.subtitle {
+    font-family: var(--font-main);
+    font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.listItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: var(--font-main);
+    font-size: clamp(0.88rem, 1.1vw, 1rem);
+    line-height: 1.6;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+.bullet {
+    display: block;
+    min-width: 6px;
+    height: 6px;
+    background: var(--card-accent);
+    transform: rotate(45deg);
+    margin-top: 8px;
+    border-radius: 1px;
+    flex-shrink: 0;
+}
+
+.priceBar {
+    margin-top: auto;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: var(--card-accent);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.price {
+    font-family: var(--font-main);
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--neutral-black);
+}
+
+@media (max-width: 900px) {
+    .featured:hover {
+        transform: translateY(-4px);
+    }
+}

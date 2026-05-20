@@ -1,5 +1,6 @@
 import Home from "../components/Home/Home";
 import Services from "../components/Services/Service";
+import Formules from "../components/Formules/Formules";
 import Contact from "../components/Contact/Contact";
 import Header from "../components/Header/Header";
 import Context from "../components/Context/Context";
@@ -19,6 +20,10 @@ export default function Main() {
 
       <section id="services">
         <Services />
+      </section>
+
+      <section id="formules">
+        <Formules />
       </section>
 
       <section id="contact">

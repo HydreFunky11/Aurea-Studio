@@ -1,0 +1,65 @@
+.wrapper {
+    padding: clamp(80px, 12vh, 140px) clamp(20px, 5vw, 80px);
+    background-color: var(--bg-card-alt);
+    position: relative;
+}
+
+.header {
+    max-width: 1200px;
+    margin: 0 auto clamp(48px, 6vh, 80px);
+}
+
+.labelRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.labelLine {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.label {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.sectionTitle {
+    font-family: var(--font-logo);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--text-main);
+    margin-bottom: 12px;
+    line-height: 1;
+}
+
+.sectionSubtitle {
+    font-family: var(--font-title);
+    color: var(--text-muted);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    letter-spacing: 0.5px;
+    font-weight: normal;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+}

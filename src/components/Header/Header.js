@@ -40,8 +40,8 @@ export default function Header() {
           <a href="#services" className={styles.link} onClick={closeMenu}>
             Services
           </a>
-          <a href="#talents" className={styles.link} onClick={closeMenu}>
-            Talents
+          <a href="#formules" className={styles.link} onClick={closeMenu}>
+            Formules
           </a>
           <a
             href="#contact"
