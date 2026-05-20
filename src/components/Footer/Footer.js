@@ -16,7 +16,7 @@ const Footer = () => {
         <div className={styles.topSection}>
           <div className={styles.brandCol}>
             <div className={styles.logo}>
-              Aurea <span className={styles.logoSub}>EVENT</span>
+              Gold <span className={styles.logoSub}>EVENT</span>
             </div>
             <p className={styles.brandDesc}>
               Révélateur de talents et créateur d&apos;instants

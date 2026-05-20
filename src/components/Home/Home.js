@@ -129,7 +129,7 @@ export default function Home() {
           </div>
 
           <h1 className={styles.title}>
-            <span className={styles.titleAurea}>Aurea</span>
+            <span className={styles.titleAurea}>Gold</span>
             <span className={styles.titleEvent}>Event</span>
           </h1>
 
