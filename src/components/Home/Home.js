@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import styles from "./Home.module.css";
+import Image from "next/image";
 
 const images = ["/aurea1.webp", "/aurea2.webp", "/aurea3.webp"];
 
@@ -59,12 +60,16 @@ export default function Home() {
                   style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                   {images.map((src, index) => (
-                    <img
-                      key={index}
-                      src={src}
-                      alt={`Gold ${index + 1}`}
-                      className={styles.carouselImage}
-                    />
+                    <div key={index} className={styles.carouselSlide}>
+                      <Image
+                        src={src}
+                        alt={`Gold ${index + 1}`}
+                        fill
+                        className={styles.carouselImage}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority={index === 0}
+                      />
+                    </div>
                   ))}
                 </div>
               </div>

@@ -23,3 +23,19 @@
 .toggleBtn:active {
     transform: rotate(20deg) scale(0.95);
 }
+
+.sunIcon {
+    display: block;
+}
+
+.moonIcon {
+    display: none;
+}
+
+[data-theme="light"] .sunIcon {
+    display: none;
+}
+
+[data-theme="light"] .moonIcon {
+    display: block;
+}

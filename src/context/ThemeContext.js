@@ -1,29 +1,53 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useCallback,
+  useSyncExternalStore,
+} from "react";
 
-const ThemeContext = createContext();
+const THEME_KEY = "theme";
+const DEFAULT_THEME = "dark";
+
+const listeners = new Set();
+
+function subscribe(onStoreChange) {
+  listeners.add(onStoreChange);
+  return () => listeners.delete(onStoreChange);
+}
+
+function notify() {
+  listeners.forEach((listener) => listener());
+}
+
+function getThemeSnapshot() {
+  if (typeof document === "undefined") return DEFAULT_THEME;
+  return document.documentElement.getAttribute("data-theme") || DEFAULT_THEME;
+}
+
+function getServerThemeSnapshot() {
+  return DEFAULT_THEME;
+}
+
+function setTheme(theme) {
+  localStorage.setItem(THEME_KEY, theme);
+  document.documentElement.setAttribute("data-theme", theme);
+  notify();
+}
+
+const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("dark");
-  const [mounted, setMounted] = useState(false);
+  const theme = useSyncExternalStore(
+    subscribe,
+    getThemeSnapshot,
+    getServerThemeSnapshot,
+  );
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    setTheme(savedTheme);
-    setMounted(true);
-  }, []);
-
-  // Sync the DOM attribute and localStorage whenever the theme state changes
-  useEffect(() => {
-    if (!mounted) return;
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme, mounted]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
+  const toggleTheme = useCallback(() => {
+    setTheme(theme === "light" ? "dark" : "light");
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
